@@ -41,11 +41,11 @@ type koneksi : single,pool and request
 -------------------------------------------*/
 app.use(
     connection(mysql,{
-        host: 'localhost',
-        user: 'root', // your mysql user
-        password : '', // your mysql password
+        host: 'bhpf4zcqztf9ryistth0-mysql.services.clever-cloud.com',
+        user: 'upwubognzvigw8yb', // your mysql user
+        password : 'clHLCsJ5gkeSLCWT2wg5', // your mysql password
         port : 3307, //port mysql
-        database:'spp' // your database name
+        database:'bhpf4zcqztf9ryistth0' // your database name
     },'pool') //or single
 );
 app.use('/', index);
@@ -68,3 +68,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 module.exports = app;
+const APP_PORT = process.env.PORT || '4567';
+app.listen(APP_PORT, () => {
+    console.log(`Server started on port ${APP_PORT}...`);
+  });
